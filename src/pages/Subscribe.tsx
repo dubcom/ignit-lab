@@ -74,7 +74,7 @@ export function Subscribe() {
         </div>
       </div>
 
-      <img src="../src/assets/code-mockup.png" className="mt-10" alt="" />
+      <img src="https://github.com/dubcom/ignit-lab/blob/main/src/assets/code-mockup.png" className="mt-10" alt="" />
     </div>
   );
 }

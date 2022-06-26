@@ -10,7 +10,8 @@ const CREATE_SUBSCRIBER_MUTATION = gql`
     }
   }
 `
-
+const subscriberId = "{data.id}";
+console.log(subscriberId);
 export function Subscribe() {
   const navigate = useNavigate()
 
@@ -29,7 +30,7 @@ export function Subscribe() {
       }
     })
 
-    navigate('/event')
+    navigate(`/event/${subscriberId}`)
   }
 
   return (

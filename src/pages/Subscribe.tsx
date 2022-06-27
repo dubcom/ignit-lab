@@ -10,8 +10,15 @@ const CREATE_SUBSCRIBER_MUTATION = gql`
     }
   }
 `
-const subscriberId = "{data.id}";
-console.log(subscriberId);
+// pegar o id do subscriber
+const GET_SUBSCRIBER = gql`
+  query GetSubscriber ($id: String!) {
+    subscribers(where: {id: $id}) {
+      id
+      name
+    }
+  } `;
+
 export function Subscribe() {
   const navigate = useNavigate()
 
@@ -30,7 +37,7 @@ export function Subscribe() {
       }
     })
 
-    navigate(`/event/${subscriberId}`)
+    navigate(`/event/`)
   }
 
   return (

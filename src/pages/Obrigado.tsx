@@ -1,11 +1,10 @@
 
-
 export function Obrigado () {
   
     return (
     
-      <div className="bg-blur bg-cover flex flex-col items-center">
-        <div className="w-full flex items-center justify-between mt-20 mx-auto">
+      <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
+        <div className="items-center">
           <div className="items-center text-center pl-4">
     
             <h1 className="mt-8 text-[2.5rem] leading-tight">

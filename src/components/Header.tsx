@@ -1,3 +1,4 @@
+import { getAuth, signOut } from 'firebase/auth';
 import { List, X } from "phosphor-react";
 import { Logo } from "./Logo";
 
@@ -7,6 +8,7 @@ interface HeaderProps {
 }
 
 export function Header(props: HeaderProps) {
+  const auth = getAuth();
   return (
     <header className="w-full py-5 flex flex-row items-center justify-between flex bg-gray-700 border-b border-gray-600 px-5 lg:px-0 lg:justify-center">
       <Logo/>
@@ -30,6 +32,10 @@ export function Header(props: HeaderProps) {
           />
         )}
       </div>
+      <div className="p- 8 content-between flex  justify-end">
+      <button className="mt-4 mr-8 p-8 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50" 
+        onClick={() => signOut(auth)}> Sair </button>
+        </div>
     </header>
   )
 }

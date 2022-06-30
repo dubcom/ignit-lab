@@ -4,6 +4,7 @@ import { Logo } from "../components/Logo";
 
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useCreateSubscriberMutation } from "../graphql/generated";
+import { Header } from "../components/Header";
 
 export interface ILoginPageProps { }
 
@@ -48,6 +49,7 @@ export function Subscribe<IAuthRouteProps>() {
 
 
   return (
+    
 
     <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
       <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto">
@@ -98,7 +100,7 @@ export function Subscribe<IAuthRouteProps>() {
         </div>
       </div>
 
-      <img src="/code-mockup.png" className="mt-10" alt="code" />
+      <img src="/image/code-mockup.png" className="mt-10" alt="code" />
     </div>
 
   );

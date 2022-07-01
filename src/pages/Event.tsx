@@ -8,11 +8,12 @@ import { Obrigado } from "./Obrigado";
 export function Event() {
   const { slug } = useParams<{ slug: string }>();
 
-  const [sidebarOpened, setSidebarOpened ] = useState(true);
+  const [sidebarOpened, setSidebarOpened ] = useState(false);
 
   function handleOpenSidebar() {
     setSidebarOpened(!sidebarOpened);
   }
+
 
   return (
     <div className="flex flex-col min-h-screen">

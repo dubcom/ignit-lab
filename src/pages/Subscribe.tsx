@@ -1,10 +1,9 @@
 import { FormEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
 
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useCreateSubscriberMutation } from "../graphql/generated";
-import { Header } from "../components/Header";
 
 export interface ILoginPageProps { }
 
@@ -16,10 +15,11 @@ export function Subscribe<IAuthRouteProps>() {
 
   const signInWithGoogle = async () => {
     setAuthing(true);
+    
 
     signInWithPopup(auth, new GoogleAuthProvider())
       .then((response) => {
-        console.log(response.user.uid);
+    
         navigate('/event');
       })
       .catch((error) => {
@@ -28,13 +28,13 @@ export function Subscribe<IAuthRouteProps>() {
       });
   }
 
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
   const [createSubscriber, { loading }] = useCreateSubscriberMutation();
 
   async function handleSubscribe(event: FormEvent) {
+    setAuthing(true);
     event.preventDefault();
 
     createSubscriber({
@@ -52,7 +52,7 @@ export function Subscribe<IAuthRouteProps>() {
     
 
     <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
-      <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto">
+      <div className="w-full max-w-[1100px] flex items-center justify-between mt-8 mx-auto">
         <div className="max-w-[640px]">
           <Logo />
 
@@ -94,13 +94,15 @@ export function Subscribe<IAuthRouteProps>() {
             <button disabled={authing} onClick={() => signInWithGoogle()}
               className="mt-4 bg-red-500 uppercase py-4 rounded font-bold text-sm hover:bg-red-700 transition-colors disabled:opacity-50"
               type="submit">
-              Com Google
+             Garantir com Google
             </button>
+          </div>
+          <div className="flex flex-col gap-2 w-full center mt-4 text-gray-300"> 
+          <Link to="event/" className="hover:text-gray-50 text-center uppercase text-gray-500" > Entrar </ Link>
           </div>
         </div>
       </div>
-
-      <img src="/image/code-mockup.png" className="mt-10" alt="code" />
+      <img src="/image/code-mockup.png" alt="code" />
     </div>
 
   );

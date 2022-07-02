@@ -10,13 +10,14 @@ interface LessonProps {
   slug: string;
   availableAt: Date;
   type: 'live' | 'class';
+  
 }
-const [sidebarOpened, setSidebarOpened ] = useState(false);
 
-function handleOpenSidebar() {
-  setSidebarOpened(!sidebarOpened);
-}
+
 export function Lesson(props: LessonProps) {
+
+
+
   const { slug } = useParams<{slug: string}>()
 
   const isLessonAvailable = isPast(props.availableAt);

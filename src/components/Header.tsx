@@ -23,15 +23,11 @@ export function Header(props: HeaderProps) {
     <header className="w-full py-5 flex flex-row  justify-between flex bg-gray-700 border-b border-gray-600 px-5 lg:px-0 mr-8">
       <div><Link to="/" ><Logo/></Link> </div>
       <div className="items-center flex ">
-      <button className="mt-4 mr-4 ml-4 p-8 bg-green-500 uppercase py-1 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50" 
+      <button className="mt-4 mr-4 ml-4 p-8 sm:hidden bg-green-500 uppercase py-1 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50" 
         onClick={handleSignOut}> Sair </button>
         </div>
       <div className="lg:hidden flex flex-row items-center">
-        <p
-          className="text-sm"
-        >
-         Menu
-        </p>
+       
         {!props.sidebarOpened ? (
           
           <List 

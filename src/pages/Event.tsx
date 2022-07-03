@@ -23,9 +23,7 @@ export function Event() {
         sidebarOpened={sidebarOpened}
       />
       <main className="flex flex-1">
-        {
-          slug 
-          ? 
+        {slug ? 
           <Video lessonSlug={slug} /> 
           : 
           <div className="flex-1"> <Obrigado /> </div> 

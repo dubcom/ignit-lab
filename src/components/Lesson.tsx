@@ -76,6 +76,7 @@ export function Lesson(props: LessonProps) {
           >
           {props.type === 'live' ? 'AO VIVO' : 'AULA PRÁTICA'}
           </span>
+          
         </header>
 
         <strong className={classNames('mt-5 block', {

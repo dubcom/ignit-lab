@@ -12,9 +12,9 @@ export function Header(props: HeaderProps) {
  
   
   return (
-    <header className="w-full px-4 py-3 flex items-center justify-between bg-gray-700 border-b border-gray-600 lg:py-5 lg:justify-center">
-      <div><Link to="/" ><Logo/></Link> </div>
-     
+    <header className="w-full py-5 flex flex-row p-8  justify-between bg-gray-700 border-b border-gray-600 px-5 lg:px-0 mr-8">
+      
+      <div className="ml-8 mr-8 max-w-[1199px]"><Link to="/" ><Logo/></Link> </div>
       <div className="lg:hidden flex flex-row items-center">
        
         {!props.sidebarOpened ? ( 
@@ -32,7 +32,6 @@ export function Header(props: HeaderProps) {
           />
         )}
        
-      
       </div>
     
     </header>

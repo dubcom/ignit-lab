@@ -4,12 +4,21 @@ import { Loading } from "./Loading";
 
 import '@vime/core/themes/default.css';
 import { useGetLessonBySlugQuery } from "../graphql/generated";
+import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 interface VideoProps {
   lessonSlug: string;
 }
 
 export function Video(props: VideoProps) {
+
+  const auth = getAuth();
+  const navigate = useNavigate();
+  function handleSignOut() {
+    signOut(auth);
+    navigate('/');
+  }
 
   const { data } = useGetLessonBySlugQuery({
     variables: {
@@ -111,7 +120,10 @@ export function Video(props: VideoProps) {
             </div>
           </a>
         </div>
-        
+        <div className="items-center">
+      <button className="mt-4 mr-4 ml-4 p-8  bg-green-500 uppercase py-1 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50" 
+        onClick={handleSignOut}> Sair </button>
+        </div>
       </div>
 
 

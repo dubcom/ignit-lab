@@ -1,7 +1,6 @@
-import { getAuth, signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useGetLessonsQuery } from "../graphql/generated";
 import { Lesson } from "./Lesson";
+
 
 
 export function Sidebar() {
@@ -16,7 +15,7 @@ export function Sidebar() {
        Aulas
       </span>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8" >
 
         {data?.lessons.map(lesson => {
           return (
@@ -26,6 +25,7 @@ export function Sidebar() {
               slug={lesson.slug}
               availableAt={new Date(lesson.availableAt)}
               type={lesson.lessonType}
+              
             />
           )
         })}

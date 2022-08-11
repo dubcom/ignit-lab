@@ -3,12 +3,13 @@ import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-reac
 import { Loading } from "./Loading";
 
 import '@vime/core/themes/default.css';
-import { useGetLessonBySlugQuery } from "../graphql/generated";
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { useGetLessonBySlugQuery } from "../graphql/generated";
 
 interface VideoProps {
   lessonSlug: string;
+  
 }
 
 export function Video(props: VideoProps) {
